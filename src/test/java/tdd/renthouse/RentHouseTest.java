@@ -15,7 +15,9 @@ public class RentHouseTest {
   @Before
   public void setup() {
     region = new Region("蘆洲", new BigDecimal(1000));
-    house = new House(new BigDecimal(40), region);
+    house = new House();
+    house.setPing(new BigDecimal(40));
+    house.setRegion(region);
   }
   
   @Test
