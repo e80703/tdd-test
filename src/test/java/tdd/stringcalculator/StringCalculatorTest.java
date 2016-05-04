@@ -82,4 +82,19 @@ public class StringCalculatorTest {
   public void larger_than_1000() {
     assertEquals(2, calculator.add("2, 1001"));
   }
+  
+  @Test
+  public void defined_delimiter_multiple_character() {
+    assertEquals(3, calculator.add("//[***]\n1***2"));
+  }
+  
+  @Test
+  public void defined_multiple_delimiter_single_character() {
+    assertEquals(6, calculator.add("//[*][?]\n1*2?3"));
+  }
+  
+  @Test
+  public void defined_multiple_delimiter_multiple_character() {
+    assertEquals(6, calculator.add("//[***][???]\n1***2???3"));
+  }
 }
